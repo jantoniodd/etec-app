@@ -1,0 +1,10 @@
+
+.login-box{
+    width: 100%;
+}
+
+@media (min-width: 576px) {
+  .login-box {
+    width: 20rem;
+  }
+}

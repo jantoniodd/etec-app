@@ -24,10 +24,10 @@
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">
-                    USER
+                    {{user.username | uppercase }}
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#"><i class="icon ion-md-power"></i> logout</a>
+                    <a class="dropdown-item" (click)="logout()"><i class="icon ion-md-power"></i> logout</a>
                 </div>
             </li>
         </ul>
