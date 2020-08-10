@@ -5,10 +5,9 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import { User } from './../_models';
+import { environment } from 'src/environments/environment';
 
-@Injectable(
-  // {providedIn: 'root',}
-)
+@Injectable()
 export class AuthService {
   private currentUserSubject: BehaviorSubject<User>;
   public currentUser: Observable<User>;
@@ -25,8 +24,7 @@ export class AuthService {
   }
 
   login(username: string, password: string) {
-    
-    const url = 'http://localhost/app/tokens';
+    const url = `${environment.url}/tokens`;
 
     return this._http
       .post(url, { username: username, password: password })
