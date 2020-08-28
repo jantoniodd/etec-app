@@ -1,18 +1,17 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from "@angular/common/http";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 
 import { CoreModule } from "./core/core.module";
 import { SharedModule } from "./shared/shared.module";
-import { MaterialModule } from "./material/material.module";
 
 import { AppComponent } from './app.component';
 import { AdminLayoutComponent } from './layouts/admin/admin-layout.component';
 import { AuthLayoutComponent } from './layouts/auth/auth-layout.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -23,11 +22,10 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    CoreModule,
-    SharedModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    ReactiveFormsModule,
+    CoreModule,
+    SharedModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
