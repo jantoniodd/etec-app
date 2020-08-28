@@ -1,22 +1,24 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
-import { AuthGuard } from './_helpers/auth.guard';
-
-import { LoginComponent } from './authentication/login/login.component';
-import { DashboardComponent } from './layout/dashboard/dashboard.component';
-import { CategoriesComponent } from './modules/categories/categories.component';
+import { AdminLayoutComponent } from './layouts/admin/admin-layout.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: DashboardComponent,
-    canActivate: [AuthGuard],
+    component: AdminLayoutComponent,
     children: [
-      { path: 'categorias', component: CategoriesComponent },
+      {
+        path: '',
+        loadChildren: () =>
+          import('./dashboard/dashboard.module').then((m) => m.DashboardModule),
+      },
+      {
+        path: 'almacen',
+        loadChildren: () =>
+          import('./modules/almacen/almacen.module').then((m) => m.AlmacenModule),
+      },
     ],
   },
-  { path: 'login', component: LoginComponent },
 ];
 
 @NgModule({

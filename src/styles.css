@@ -1,115 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
 
-html {
-  display: flex;
-  flex-direction: column;
-}
+@import "./../node_modules/@angular/material/prebuilt-themes/indigo-pink.css";
+@import "./assets/css/bootstrap.min.css";
+@import "./assets/css/icomoon/style.css";
+@import "./assets/css/fontawesome/css/all.min.css";
+@import "./assets/css/sidebar.css";
+@import "./assets/css/material.css";
 
-body {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-}
 
-.page-content {
-  display: flex;
-  flex-grow: 1;
-}
-
-.content-wrapper {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  overflow: auto;
-}
-
-.content {
-  padding: 1.25rem 1.25rem;
-  flex-grow: 1;
-}
-.content::after {
-  display: block;
-  clear: both;
-  content: "";
-}
-
-.form-control {
-  /* height: calc(1.5385em + 1rem + 2px); */
-  background-clip: border-box;
-  border-width: 1px 0;
-  border-top-color: transparent !important;
-  border-radius: 0;
-}
-.form-control:focus {
-  outline: 0;
-  box-shadow: 0 0 0 0 transparent, 0 1px 0 #009688;
-}
-
-.form-group-feedback {
-  position: relative;
-}
-
-.form-group-feedback-left .form-control-feedback {
-  left: 0;
-}
-
-.form-group-feedback-left .form-control {
-  padding-left: 2rem;
-}
-
-.form-control-feedback {
-  position: absolute;
-  top: 0;
-  color: #333;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0.5rem;
-  min-width: 1rem;
-}
-/* 
-.card {
-  margin-bottom: 1.25rem;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  border-width: 0;
-} */
-
-/**
-* Sidebar
-*
-**/
-
-#sidebar {
-  width: 16.875rem;
-  height: 100vh;
-}
-
-.nav-sidebar {
-  flex-direction: column;
-}
-.nav-sidebar .nav-item-header {
-  padding: 0.75rem 1.25rem;
-  margin-top: 0.5rem;
-}
-
-/**
-*header
-*
-**/
+html, body { height: 100%; }
+body { margin: 0; font-family: "Arimo", Helvetica, sans-serif; font-size: .825rem; }
 
 .navbar {
-  padding-top: 0;
-  padding-bottom: 0;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 
-.navbar-header {
-  width: 16.875rem;
-  margin-left: -1rem;
-  margin-right: 1.5rem;
-}
-
-.navbar-brand img {
-  height: 1rem;
-  display: block;
-}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

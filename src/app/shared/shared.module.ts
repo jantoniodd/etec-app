@@ -1,13 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HeaderComponent } from './components/header/header.component';
-import { SidebarComponent } from './components/sidebar/sidebar.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { RouterModule } from '@angular/router';
+import { AccordionDirective } from './accordion.directive';
+import { AccordionlinkDirective } from './accordionlink.directive';
+import { AccordiontoggleDirective } from './accordiontoggle.directive';
+
+
 
 @NgModule({
-  declarations: [HeaderComponent, SidebarComponent, FooterComponent],
-  imports: [CommonModule, RouterModule],
-  exports: [HeaderComponent, SidebarComponent, FooterComponent],
+  declarations: [AccordionDirective, AccordionlinkDirective, AccordiontoggleDirective],
+  imports: [
+    CommonModule
+  ],
+  exports:[AccordionDirective, AccordionlinkDirective, AccordiontoggleDirective]
 })
-export class SharedModule {}
+export class SharedModule { }

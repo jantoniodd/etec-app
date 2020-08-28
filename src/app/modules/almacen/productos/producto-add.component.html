@@ -1,0 +1,72 @@
+<div class="card">
+
+    <div class="card-header">
+        <h5 class="card-title">{{title}}</h5>
+    </div>
+
+    <div class="card-body">
+        <form [formGroup]="formulario" (ngSubmit)="onSubmit()" autocomplete="off">
+            <!-- NOMBRE -->
+            <div class="form-group row">
+                <label for="nombre" class="col-form-label col-sm-2">Nombre</label>
+                <div class="col-sm-6">
+                    <input type="text" formControlName="nombre" name="nombre" class="form-control form-control-sm" />
+                </div>
+            </div>
+            <!-- DESCRIPCION -->
+            <div class="form-group row">
+                <label for="descripcion" class="col-form-label col-sm-2">Descripción</label>
+                <div class="col-sm-6">
+                    <input type="text" formControlName="descripcion" name="descripcion"
+                        class="form-control form-control-sm" />
+                </div>
+            </div>
+            <!-- CATEGORIA -->
+            <div class="form-group row">
+                <label for="category" class="col-form-label col-sm-2">Categoria</label>
+                <div class="col-sm-6">
+                    <select name="category" formControlName="category" class="form-control form-control-sm">
+                        <option [ngValue]="undefined">-- Seleccione --</option>
+                        <option *ngFor="let item of categories" [ngValue]="item">
+                            {{item.description}}
+                        </option>
+                    </select>
+                </div>
+            </div>
+            <!-- PRECIO VENTA-->
+            <div class="form-group row">
+                <label for="precio_pv" class="col-form-label col-sm-2">P. Venta</label>
+                <div class="col-sm-6">
+                    <input type="text" name="precio_pv" formControlName="precio_pv"
+                        class="form-control form-control-sm" />
+                </div>
+            </div>
+            <!-- PRECIO COMPRA-->
+            <div class="form-group row">
+                <label for="precio_pc" class="col-form-label col-sm-2">P. Compra</label>
+                <div class="col-sm-6">
+                    <input type="text" name="precio_pc" formControlName="precio_pc"
+                        class="form-control form-control-sm" />
+                </div>
+            </div>
+            <!-- CANTIDAD -->
+            <div class="form-group row">
+                <label for="cantidad" class="col-form-label col-sm-2">Cantidad</label>
+                <div class="col-sm-6">
+                    <input type="text" name="cantidad" formControlName="cantidad"
+                        class="form-control form-control-sm" />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <button class="btn btn-success" type="submit">
+                        <i class="icon ion-ios-save"></i> Guardar
+                    </button>
+                </div>
+            </div>
+
+        </form>
+
+    </div>
+</div>

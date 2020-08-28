@@ -1,0 +1,66 @@
+.sidebar-container {
+  position: relative;
+  color: rgba(255, 255, 255, 0.55);
+  width: 16.875rem;
+  min-height: 100vh;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.sidebar-container .nav-item .nav-link {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.sidebar-container .nav-item .nav-link:hover {
+  /* background-color: rgba(255, 0, 0, 0.55);*/
+  background-color: #394357;
+}
+
+.nav-link {
+  cursor: pointer;
+}
+
+.nav-link > i {
+  margin-right: 1.25rem;
+}
+
+.nav-group-sub .nav-link {
+  padding-left: 2rem;
+}
+
+.nav-group-sub .nav-group-sub .nav-link {
+  padding-left: 3.5rem;
+}
+
+.nav-item-submenu > .nav-link:after {
+  content: "\ea44";
+  font-family: "icomoon";
+  display: inline-block;
+  vertical-align: middle;
+  position: absolute;
+  right: 1.5rem;
+  transition: -webkit-transform 0.25s ease-in-out;
+  transition: transform 0.25s ease-in-out;
+  transition: transform 0.25s ease-in-out, -webkit-transform 0.25s ease-in-out;
+}
+
+.nav-link.nav-item-open {
+  background-color: #394357;
+}
+
+.nav-item-submenu.nav-item-open > .nav-link:after {
+  transform: rotate(-90deg);
+}
+
+.nav-group-sub {
+  /* display: none; */
+  display: block;
+  max-height: 0;
+  transform: translateX(-100%);
+  transition: transform ease-out 0.5s, max-height ease-out 0.45s;
+}
+
+.nav-item-submenu.nav-item-open > .nav-group-sub {
+  max-height: 1000px;
+  /* display: block; */
+  transform: translateX(0);
+}

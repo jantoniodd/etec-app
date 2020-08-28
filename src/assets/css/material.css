@@ -1,0 +1,32 @@
+.mat-table {
+  font-family: "Arimo", Helvetica, sans-serif;
+  font-size: 0.75;
+}
+
+.mat-table mat-header-row {
+  min-height: 2.5rem;
+  font-size: 14px;
+  /* background: #343a40; */
+  background: #f8f9fa;
+}
+
+.mat-table .mat-row .mat-cell {
+  background: lightcoral;
+  color: rgba(0, 0, 0, 0.55);
+  font-size: 12px;
+}
+
+.mat-header-cell {
+  text-transform: uppercase;
+}
+
+.mat-table mat-row,
+.mat-table mat-footer-row {
+  min-height: 2rem;
+}
+
+.mat-paginator {
+  /* background: #343a40; */
+  background: #f8f9fa;
+  /* color: rgba(255, 255, 255, 0.55); */
+}
