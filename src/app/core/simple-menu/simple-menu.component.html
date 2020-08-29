@@ -1,6 +1,10 @@
 <li class="nav-item" sappAccordionlink *ngFor="let node of nodes" [ngClass]="{'nav-item-submenu': node.items}">
 
-    <a class="nav-link" [routerLink]="[node.link]" routerLinkActive="nav-item-open"  *ngIf="node.typeLink==0">
+    <a *ngIf="node.typeLink==0"
+        class="nav-link" 
+        [routerLink]="[node.link]" 
+        routerLinkActive="active" 
+        [routerLinkActiveOptions]="{exact:true}" >
         <i [ngClass]="node.icon"></i>
         <span>{{node.label}}</span>
     </a>
