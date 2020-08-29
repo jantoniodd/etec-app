@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { CategoriaAddComponent } from './categorias/categoria-add.component';
 import { CategoriaComponent } from './categorias/categoria.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {
@@ -19,6 +20,6 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [CategoriaAddComponent, CategoriaComponent],
-  imports: [CommonModule, RouterModule.forChild(routes)],
+  imports: [CommonModule, RouterModule.forChild(routes), ReactiveFormsModule],
 })
 export class AlmacenModule {}
