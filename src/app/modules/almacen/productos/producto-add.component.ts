@@ -14,7 +14,7 @@ import { CategoriaService } from './../../../core/services/categoria.service';
 })
 export class ProductoAddComponent implements OnInit {
 
-title = 'Crear Producto';
+  title = 'Crear Producto';
 
   formulario: FormGroup;
 

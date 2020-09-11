@@ -28,7 +28,7 @@ export class ProductoComponent implements OnInit {
   constructor(private _service: ProductoService) {}
 
   ngOnInit(): void {
-    this._service.findPage(this.pageIndex, this.pageSize).subscribe((data) => {
+    this._service.paginate(this.pageIndex, this.pageSize).subscribe((data) => {
       console.info(data);
       this.length = data.count;
       this.list = data.content as Product[];
@@ -39,7 +39,7 @@ export class ProductoComponent implements OnInit {
     this.pageIndex = e.pageIndex;
     this.pageSize = e.pageSize;
 
-    this._service.findPage(this.pageIndex, this.pageSize).subscribe((data) => {
+    this._service.paginate(this.pageIndex, this.pageSize).subscribe((data) => {
       this.length = data.count;
       this.list = data.content as Product[];
     });

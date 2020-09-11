@@ -1,0 +1,16 @@
+
+.cuadrilla {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 1rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .cuadrilla {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1rem;
+  }
+}
+
+/* grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); */

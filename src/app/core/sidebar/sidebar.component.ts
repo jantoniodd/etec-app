@@ -32,31 +32,16 @@ export class SidebarComponent implements OnInit {
         {
           id: 4,
           label: 'Venta',
-          link: '/venta/venta',
+          link: '/venta/ventas',
           level: 2,
           typeLink: 0,
         },
         {
           id: 5,
           label: 'Cliente',
+          link: '/venta/clientes',
           level: 2,
-          typeLink: 1,
-          items: [
-            {
-              id: 6,
-              label: 'Busqueda Clientes',
-              link: '/almacen/product',
-              level: 3,
-              typeLink: 0,
-            },
-            {
-              id: 7,
-              label: 'Registro Clientes',
-              link: '/almacen/categorias',
-              level: 3,
-              typeLink: 0,
-            },
-          ],
+          typeLink: 0,
         },
       ],
     },
@@ -83,6 +68,23 @@ export class SidebarComponent implements OnInit {
         },
       ],
     },
+    {
+      id:11,
+      label:'Créditos',
+      level: 1,
+      icon: 'fas fa-hand-holding-usd',
+      typeLink: 1,
+      items:[
+        {
+          id:12,
+          label:'Solicitud Crédito',
+          link:'/credito/solicitudes',
+          level: 2,
+          typeLink: 0,
+        }
+      ]
+
+    }
   ];
 
   constructor() {}

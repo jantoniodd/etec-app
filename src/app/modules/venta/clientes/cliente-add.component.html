@@ -1,0 +1,92 @@
+<div class="card">
+    <!-- <div class="card-header">
+        <h5 class="card-title">Crear solicitud</h5>
+    </div> -->
+    <div class="card-body">
+        <form [formGroup]="formulario" (ngSubmit)="onSubmit()" autocomplete="off">
+            <div class="row">
+                <div class="col-md-6">
+                    <fieldset>
+                        <legend>Datos Personales</legend>
+                    </fieldset>
+
+                    <div class="form-group">
+                        <label for="tipo_persona">Tipo Persona</label>
+                        <select id="tipo_persona" formControlName="tipo_persona" class="form-control form-control-sm">
+                            <option disabled [ngValue]="null">-- Seleccione --</option>
+                            <option *ngFor="let item of listTipoPersona" [ngValue]="item">
+                                {{item.description}}
+                            </option>
+                        </select>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="tipo_documento">Tipo Documento</label>
+                                <select id="tipo_documento" formControlName="tipo_documento"
+                                    class="form-control form-control-sm">
+                                    <option disabled [ngValue]="null" selected>-- Seleccione --</option>
+                                    <option *ngFor="let item of listTipoDocumento" [ngValue]="item">
+                                        {{item.description}}
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="nro_doc_ide">N° Documento</label>
+                                <input type="text" id="nro_doc_ide" formControlName="nro_doc_ide"
+                                    placeholder="Numero Documento" class="form-control form-control-sm">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="nombres">Nombres</label>
+                        <input type="text" id="nombres" formControlName="nombres" class="form-control form-control-sm"
+                            placeholder="Nombres">
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="ape_paterno">Apellido Paterno:</label>
+                                <input type="text" id="ape_paterno" formControlName="ape_paterno"
+                                    placeholder="Apellido paterno" class="form-control form-control-sm">
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="ape_materno">Apellido Materno</label>
+                                <input type="text" id="ape_materno" formControlName="ape_materno"
+                                    placeholder="Apellido materno" class="form-control form-control-sm">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="fec_nacido">Fec. Nacimiento:</label>
+                                <input id="fec_nacido" matInput [matDatepicker]="picker" formControlName="fec_nacido"
+                                    class="form-control form-control-sm">
+                                <mat-datepicker-toggle matSuffix [for]="picker"
+                                    style="position: absolute; top: 20px; right: .5rem;"></mat-datepicker-toggle>
+                                <mat-datepicker #picker></mat-datepicker>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-6"></div>
+            </div>
+            <div class="text-right">
+                <button type="submit" [disabled]="!formulario.valid" class="btn btn-primary">Guardar <i
+                        class="fas fa-paper-plane"></i></button>
+            </div>
+        </form>
+    </div>
+</div>

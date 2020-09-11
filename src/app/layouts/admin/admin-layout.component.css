@@ -1,12 +1,10 @@
-.content-wrapper{
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    overflow: auto;
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow: auto;
 }
 
 .content {
-
-    padding: 1.25rem 1.25rem;
-
+  padding: 1.25rem 1.25rem;
 }

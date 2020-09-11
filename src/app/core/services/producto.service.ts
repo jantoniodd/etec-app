@@ -15,7 +15,7 @@ export class ProductoService {
     return this._http.post<Product>(url, entity);
   }
 
-  findPage(page: number, size: number): Observable<any> {
+  paginate(page: number, size: number): Observable<any> {
     const url = `${environment.url}/products`;
 
     const params = new HttpParams()

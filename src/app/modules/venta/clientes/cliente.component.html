@@ -1,0 +1,75 @@
+<div class="row d-flex justify-content-center">
+    <div class="col-sm-9 ">
+        <div class="card">
+
+            <div class="card-body">
+
+                <div class="row">
+
+                    <div class="col-md-12">
+
+                        <fieldset>
+                            <legend>Listado de Clientes</legend>
+                        </fieldset>
+
+                        <div class="input-group mb-3">
+                            <span class="input-group-prepend mr-3">
+                                <button class="btn btn-light" type="button" [routerLink]="['/venta/clientes/nuevo']">
+                                    <i class="icon-plus"></i>
+                                    Nuevo
+                                </button>
+                            </span>
+
+                            <input type="text" name="search" class="form-control" placeholder="Buscar Cliente">
+
+                        </div>
+
+                        <div class="mat-elevation-z8 w-100">
+
+                            <mat-table [dataSource]="list">
+                                <!-- Position Column -->
+                                <ng-container matColumnDef="id">
+                                    <mat-header-cell *matHeaderCellDef> N° </mat-header-cell>
+                                    <mat-cell *matCellDef="let index = index"> {{index + 1}} </mat-cell>
+                                </ng-container>
+
+                                <ng-container matColumnDef="tipo_persona">
+                                    <mat-header-cell *matHeaderCellDef> Tipo Persona </mat-header-cell>
+                                    <mat-cell *matCellDef="let element"> {{element.persona.tipo_persona.description}}
+                                    </mat-cell>
+                                </ng-container>
+
+                                <ng-container matColumnDef="tipo_doc_ide">
+                                    <mat-header-cell *matHeaderCellDef> Tipo Documento </mat-header-cell>
+                                    <mat-cell *matCellDef="let element"> {{element.persona.tipo_doc_ide.code}}
+                                    </mat-cell>
+                                </ng-container>
+
+                                <ng-container matColumnDef="nro_doc_ide">
+                                    <mat-header-cell *matHeaderCellDef> N° Documento </mat-header-cell>
+                                    <mat-cell *matCellDef="let element"> {{element.persona.nro_doc_ide}} </mat-cell>
+                                </ng-container>
+
+                                <ng-container matColumnDef="cliente">
+                                    <mat-header-cell *matHeaderCellDef> Cliente </mat-header-cell>
+                                    <mat-cell *matCellDef="let element"> {{element.persona.nombres}} </mat-cell>
+                                </ng-container>
+
+                                <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                                <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+                            </mat-table>
+
+                            <mat-paginator [length]="length" [pageSize]="pageSize" [pageIndex]="pageIndex"
+                                (page)="paginate($event)" [pageSizeOptions]="pageSizeOptions" showFirstLastButtons>
+                            </mat-paginator>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,67 @@
+<div class="card">
+
+    <div class="card-body">
+
+        <div class="row">
+
+            <div class="col-md-12">
+
+                <fieldset>
+                    <legend>Listado de Clientes</legend>
+                </fieldset>
+
+                <div class="input-group mb-3">
+                    <input type="text" name="search" class="form-control" placeholder="Buscar Cliente">
+                </div>
+
+                <div class="mat-elevation-z2 w-100">
+
+                    <mat-table [dataSource]="list">
+                        <!-- Position Column -->
+
+                        <ng-container matColumnDef="id">
+                            <mat-header-cell *matHeaderCellDef> N° </mat-header-cell>
+                            <mat-cell *matCellDef="let index = index"> {{index + 1}} </mat-cell>
+                        </ng-container>
+
+                        <ng-container matColumnDef="accion">
+                            <mat-header-cell *matHeaderCellDef> Selección </mat-header-cell>
+                            <mat-cell *matCellDef="let element">
+                                <button type="button" class="btn btn-light" (click)="selected(element)">
+                                    <i class="icon-point-up"></i>
+                                    Seleccionar
+                                </button>
+                            </mat-cell>
+                        </ng-container>
+
+                        <ng-container matColumnDef="nro_doc_ide">
+                            <mat-header-cell *matHeaderCellDef> N° Documento </mat-header-cell>
+                            <mat-cell *matCellDef="let element"> {{element.persona.nro_doc_ide}} </mat-cell>
+                        </ng-container>
+
+                        <ng-container matColumnDef="cliente">
+                            <mat-header-cell *matHeaderCellDef> Cliente </mat-header-cell>
+                            <mat-cell *matCellDef="let element">
+                                {{element.persona.nombres}}
+                                {{element.persona.ape_paterno}}
+                                {{element.persona.ape_materno}}
+                            </mat-cell>
+                        </ng-container>
+
+                        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+
+                    </mat-table>
+
+                    <mat-paginator [length]="length" [pageSize]="pageSize" [pageIndex]="pageIndex"
+                        (page)="paginate($event)" [pageSizeOptions]="pageSizeOptions" showFirstLastButtons>
+                    </mat-paginator>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>

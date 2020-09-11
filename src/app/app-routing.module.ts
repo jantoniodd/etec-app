@@ -10,12 +10,28 @@ const routes: Routes = [
       {
         path: '',
         loadChildren: () =>
-          import('./modules/dashboard/dashboard.module').then((m) => m.DashboardModule),
+          import('./modules/dashboard/dashboard.module').then(
+            (m) => m.DashboardModule
+          ),
       },
       {
         path: 'almacen',
         loadChildren: () =>
-          import('./modules/almacen/almacen.module').then((m) => m.AlmacenModule),
+          import('./modules/almacen/almacen.module').then(
+            (m) => m.AlmacenModule
+          ),
+      },
+      {
+        path: 'credito',
+        loadChildren: () =>
+          import('./modules/credito/credito.module').then(
+            (m) => m.CreditoModule
+          ),
+      },
+      {
+        path: 'venta',
+        loadChildren: () =>
+          import('./modules/venta/venta.module').then((m) => m.VentaModule),
       },
     ],
   },

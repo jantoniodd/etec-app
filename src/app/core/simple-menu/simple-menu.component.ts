@@ -1,18 +1,21 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'sapp-simple-menu',
   templateUrl: './simple-menu.component.html',
-  styles: [
-  ]
+  styles: [],
 })
-export class SimpleMenuComponent implements OnInit {
+export class SimpleMenuComponent implements OnInit, OnChanges {
+  @Input() nodes: any[];
 
-  @Input() nodes : any[];
+  public ruta: string[] = ['/'];
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+  ngOnChanges(){
+    this.ruta.push()
   }
-
+  
 }

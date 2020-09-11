@@ -12,25 +12,36 @@ import { CategoriaService } from 'src/app/core/services/categoria.service';
 export class CategoriaComponent implements OnInit {
   list: Category[] = [];
 
-  formCategoria: FormGroup;
+  // pageSizeOptions: number[] = [10, 15, 20];
+
+  // length: number = 0;
+  // pageSize: number = 10;
+  // pageIndex: number = 0;
+
+  displayedColumns: string[] = [
+    // 'id',
+    'nombre',
+    'descripcion',
+  ];
+
+  formulario: FormGroup;
 
   constructor(private fb: FormBuilder, private _service: CategoriaService) {}
 
   ngOnInit(): void {
     this._service.findAll().subscribe((resp) => (this.list = resp));
-    this.formCategoria = this.fb.group({
+    this.formulario = this.fb.group({
       name: ['', Validators.required],
       description: [''],
     });
   }
 
   get f() {
-    return this.formCategoria.controls;
+    return this.formulario.controls;
   }
 
   onSubmit() {
-    
-    if (this.formCategoria.invalid) {
+    if (this.formulario.invalid) {
       return;
     }
 

@@ -4,14 +4,15 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'productos',
+    path: 'clientes',
     loadChildren: () =>
-      import('./productos/productos.module').then((m) => m.ProductosModule),
+      import('./clientes/clientes.module').then((m) => m.ClientesModule),
   },
+
   {
-    path: 'categorias',
+    path: 'ventas',
     loadChildren: () =>
-      import('./categorias/categorias.module').then((m) => m.CategoriasModule),
+      import('./ventas/ventas.module').then((m) => m.VentasModule),
   },
 ];
 
@@ -19,4 +20,4 @@ const routes: Routes = [
   declarations: [],
   imports: [CommonModule, RouterModule.forChild(routes)],
 })
-export class AlmacenModule {}
+export class VentaModule {}

@@ -6,7 +6,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 
 import { CoreModule } from "./core/core.module";
-import { SharedModule } from "./shared/shared.module";
 
 import { AppComponent } from './app.component';
 import { AdminLayoutComponent } from './layouts/admin/admin-layout.component';
@@ -25,7 +24,6 @@ import { AuthLayoutComponent } from './layouts/auth/auth-layout.component';
     BrowserAnimationsModule,
     HttpClientModule,
     CoreModule,
-    SharedModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

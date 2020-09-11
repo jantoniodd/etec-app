@@ -1,0 +1,65 @@
+<div class="card">
+
+    <div class="card-body">
+
+        <h5 class="card-title">Productos</h5>
+
+        <div class="input-group mb-3">
+            <input type="text" name="search" class="form-control" placeholder="Buscar Producto">
+        </div>
+
+        <div class="mat-elevation-z2">
+
+            <mat-table [dataSource]="list">
+                <!-- Position Column -->
+                <ng-container matColumnDef="id">
+                    <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
+                    <mat-cell *matCellDef="let index = index"> {{index + 1}} </mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="accion">
+                    <mat-header-cell *matHeaderCellDef> Selección </mat-header-cell>
+                    <mat-cell *matCellDef="let element">
+                        <button type="button" class="btn btn-light" (click)="selected(element)" >
+                            <i class="icon-point-up"></i>
+                            Seleccionar
+                        </button>
+                    </mat-cell>
+                </ng-container>
+
+                <!-- Name Column -->
+                <ng-container matColumnDef="nombre">
+                    <mat-header-cell *matHeaderCellDef> Producto </mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{element.nombre}} </mat-cell>
+                </ng-container>
+
+                <!-- Weight Column -->
+                <ng-container matColumnDef="precio_pc">
+                    <mat-header-cell *matHeaderCellDef> P. Compra </mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{element.precio_pc}} </mat-cell>
+                </ng-container>
+
+                <!-- Symbol Column -->
+                <ng-container matColumnDef="precio_pv">
+                    <mat-header-cell *matHeaderCellDef> P. Venta </mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{element.precio_pv}} </mat-cell>
+                </ng-container>
+
+                <!-- Symbol Column -->
+                <ng-container matColumnDef="cantidad">
+                    <mat-header-cell *matHeaderCellDef> Cantidad </mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{element.cantidad}} </mat-cell>
+                </ng-container>
+
+                <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+            </mat-table>
+
+            <mat-paginator [length]="length" [pageSize]="pageSize" [pageIndex]="pageIndex" (page)="paginate($event)"
+                [pageSizeOptions]="pageSizeOptions" showFirstLastButtons>
+            </mat-paginator>
+
+        </div>
+
+    </div>
+</div>

@@ -1,8 +1,13 @@
-import { Directive, OnInit } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
+import { Directive, OnInit, AfterViewInit } from '@angular/core';
+import {
+  Router,
+  NavigationEnd,
+  NavigationStart,
+  RouterEvent,
+} from '@angular/router';
 import { Subscription } from 'rxjs';
 
-import { filter } from 'rxjs/operators';
+import { filter, tap } from 'rxjs/operators';
 import { AccordionlinkDirective } from './accordionlink.directive';
 
 @Directive({
@@ -23,22 +28,22 @@ export class AccordionDirective implements OnInit {
     });
   }
 
-  // private router$: Subscription;
-
-  // constructor(private _router: Router) {}
-  constructor() {}
-
-  ngOnInit() {
-    console.log(this.navlinks);
-
-    // // this.router$ = this._router.events
-    // console.log("sappAccordion");
-    // this.router$ = this._router.events.pipe(
-    //   filter(event => event instanceof NavigationEnd)
-    // ).subscribe( (event:NavigationEnd)=>{
-    //   console.log(event);
-    // } );
-
-    // console.log(this.router$);
+  getUrl() {
+    return this._router.url;
   }
+
+  private __router: Subscription;
+
+  ngOnInit(): void {
+    this.__router = this._router.events
+      .pipe(filter((e) => e instanceof NavigationEnd))
+      .subscribe((e: NavigationEnd) => {
+        this.navlinks.forEach((e: AccordionlinkDirective) => {
+          const routeUrl = this.getUrl();
+          const currentUrl = routeUrl.split('/');
+        });
+      });
+  }
+
+  constructor(private _router: Router) {}
 }
