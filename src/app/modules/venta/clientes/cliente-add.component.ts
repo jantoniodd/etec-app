@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { UntypedFormGroup, UntypedFormBuilder, Validators } from '@angular/forms';
 
 import { PersonaService } from './../../../core/services/persona.service';
 import { ClienteService } from './../../../core/services/cliente.service';
@@ -11,12 +11,12 @@ import { TipoPersona, TipoDocumento } from 'src/app/core/models';
   providers: [ClienteService, PersonaService],
 })
 export class ClienteAddComponent implements OnInit {
-  formulario: FormGroup;
+  formulario: UntypedFormGroup;
   listTipoPersona: TipoPersona[] = [];
   listTipoDocumento: TipoDocumento[] = [];
 
   constructor(
-    private _fb: FormBuilder,
+    private _fb: UntypedFormBuilder,
     private _service: ClienteService,
     private _servicePersona: PersonaService
   ) {}

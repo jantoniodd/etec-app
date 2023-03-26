@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators, FormArray } from '@angular/forms';
-import { MatTableDataSource } from '@angular/material/table';
-import { MatDialog } from '@angular/material/dialog';
+import { UntypedFormGroup, UntypedFormBuilder, Validators, UntypedFormArray } from '@angular/forms';
+import { MatLegacyTableDataSource as MatTableDataSource } from '@angular/material/legacy-table';
+import { MatLegacyDialog as MatDialog } from '@angular/material/legacy-dialog';
 
 import { VentaService } from './../../../core/services/venta.service';
 import { Product, ItemVenta, Customer } from 'src/app/core/models';
@@ -12,7 +12,7 @@ import { Product, ItemVenta, Customer } from 'src/app/core/models';
   providers: [VentaService],
 })
 export class VentaAddComponent implements OnInit {
-  formulario: FormGroup;
+  formulario: UntypedFormGroup;
 
   detalle: ItemVenta[] = [];
 
@@ -29,12 +29,12 @@ export class VentaAddComponent implements OnInit {
 
   constructor(
     private _dialog: MatDialog,
-    private _fb: FormBuilder,
+    private _fb: UntypedFormBuilder,
     private _service: VentaService
   ) {}
 
-  get itemsVenta(): FormArray {
-    return this.formulario.get('itemsventa') as FormArray;
+  get itemsVenta(): UntypedFormArray {
+    return this.formulario.get('itemsventa') as UntypedFormArray;
   }
 
   get f() {
@@ -66,7 +66,7 @@ export class VentaAddComponent implements OnInit {
     this._service.save(this.formulario.value).subscribe((p) => console.log(p));
   }
 
-  createProducto(p: Product): FormGroup {
+  createProducto(p: Product): UntypedFormGroup {
     return this._fb.group({
       id: [p.id, [Validators.required]],
       nombre: [p.nombre, [Validators.required]],
@@ -74,7 +74,7 @@ export class VentaAddComponent implements OnInit {
     });
   }
 
-  createItemVenta(item: ItemVenta): FormGroup {
+  createItemVenta(item: ItemVenta): UntypedFormGroup {
     return this._fb.group({
       producto: this.createProducto(item.producto),
       cantidad: item.cantidad,

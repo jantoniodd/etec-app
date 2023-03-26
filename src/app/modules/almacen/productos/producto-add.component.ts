@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { UntypedFormGroup, UntypedFormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 import { Category } from 'src/app/core/models';
@@ -16,12 +16,12 @@ export class ProductoAddComponent implements OnInit {
 
   title = 'Crear Producto';
 
-  formulario: FormGroup;
+  formulario: UntypedFormGroup;
 
   categories: Category[] = [];
 
   constructor(
-    private fb: FormBuilder,
+    private fb: UntypedFormBuilder,
     private _router: Router,
     private _service: ProductoService,
     private _serviceCategoria: CategoriaService

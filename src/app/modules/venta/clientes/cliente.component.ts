@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { ClienteService } from 'src/app/core/services/cliente.service';
 import { Customer } from 'src/app/core/models';
-import { PageEvent } from '@angular/material/paginator';
+import { LegacyPageEvent as PageEvent } from '@angular/material/legacy-paginator';
 
 @Component({
   selector: 'etec-cliente',

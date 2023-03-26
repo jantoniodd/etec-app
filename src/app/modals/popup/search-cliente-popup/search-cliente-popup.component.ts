@@ -1,6 +1,6 @@
 import { Component, OnInit, NgModule, Inject } from '@angular/core';
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { PageEvent } from '@angular/material/paginator';
+import { MatLegacyDialogRef as MatDialogRef, MAT_LEGACY_DIALOG_DATA as MAT_DIALOG_DATA } from '@angular/material/legacy-dialog';
+import { LegacyPageEvent as PageEvent } from '@angular/material/legacy-paginator';
 import { Customer } from 'src/app/core/models';
 import { ClienteService } from 'src/app/core/services/cliente.service';
 import { MaterialModule } from 'src/app/material/material.module';

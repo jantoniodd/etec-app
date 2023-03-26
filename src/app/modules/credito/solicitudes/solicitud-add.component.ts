@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import { MatLegacyDialog as MatDialog } from '@angular/material/legacy-dialog';
 import { Customer, Product, ItemVenta, Venta } from 'src/app/core/models';
-import { FormGroup, FormArray, FormBuilder, Validators } from '@angular/forms';
-import { MatTableDataSource } from '@angular/material/table';
+import { UntypedFormGroup, UntypedFormArray, UntypedFormBuilder, Validators } from '@angular/forms';
+import { MatLegacyTableDataSource as MatTableDataSource } from '@angular/material/legacy-table';
 
 @Component({
   selector: 'etec-solicitud-add',
   templateUrl: './solicitud-add.component.html',
 })
 export class SolicitudAddComponent implements OnInit {
-  formulario: FormGroup;
+  formulario: UntypedFormGroup;
 
   venta: Venta;
   customer: Customer;
@@ -27,10 +27,10 @@ export class SolicitudAddComponent implements OnInit {
     // 'accion',
   ];
 
-  constructor(private _dialog: MatDialog, private _fb: FormBuilder) {}
+  constructor(private _dialog: MatDialog, private _fb: UntypedFormBuilder) {}
 
-  get items_venta(): FormArray {
-    return this.formulario.get('itemsventa') as FormArray;
+  get items_venta(): UntypedFormArray {
+    return this.formulario.get('itemsventa') as UntypedFormArray;
   }
 
   ngOnInit(): void {

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { UntypedFormGroup, UntypedFormBuilder, Validators } from '@angular/forms';
 
 import { Category } from 'src/app/core/models';
 import { CategoriaService } from 'src/app/core/services/categoria.service';
@@ -24,9 +24,9 @@ export class CategoriaComponent implements OnInit {
     'descripcion',
   ];
 
-  formulario: FormGroup;
+  formulario: UntypedFormGroup;
 
-  constructor(private fb: FormBuilder, private _service: CategoriaService) {}
+  constructor(private fb: UntypedFormBuilder, private _service: CategoriaService) {}
 
   ngOnInit(): void {
     this._service.findAll().subscribe((resp) => (this.list = resp));
