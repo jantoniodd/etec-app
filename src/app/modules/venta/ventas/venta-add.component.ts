@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { UntypedFormGroup, UntypedFormBuilder, Validators, UntypedFormArray } from '@angular/forms';
-import { MatLegacyTableDataSource as MatTableDataSource } from '@angular/material/legacy-table';
-import { MatLegacyDialog as MatDialog } from '@angular/material/legacy-dialog';
+import { UntypedFormArray, UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 
+import { MatDialog } from '@angular/material/dialog';
+import { MatTableDataSource } from '@angular/material/table';
+import { Customer, ItemVenta, Product } from 'src/app/core/models';
 import { VentaService } from './../../../core/services/venta.service';
-import { Product, ItemVenta, Customer } from 'src/app/core/models';
 
 @Component({
   selector: 'etec-venta-add',

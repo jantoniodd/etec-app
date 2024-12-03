@@ -1,8 +1,5 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatLegacyTableModule as MatTableModule } from '@angular/material/legacy-table';
-import { MatLegacyPaginatorModule as MatPaginatorModule } from '@angular/material/legacy-paginator';
-import { MatDatepickerModule } from '@angular/material/datepicker';
+import { NgModule } from '@angular/core';
 import {
   MatMomentDateModule,
   MomentDateAdapter,
@@ -12,9 +9,11 @@ import {
   MAT_DATE_FORMATS,
   MAT_DATE_LOCALE,
 } from '@angular/material/core';
-
-import { MatLegacyDialogModule as MatDialogModule } from '@angular/material/legacy-dialog';
-import {MatIconModule} from '@angular/material/icon';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatIconModule } from '@angular/material/icon';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatTableModule } from '@angular/material/table';
 
 
 export const MY_FORMATS = {
@@ -59,4 +58,4 @@ export const MY_FORMATS = {
     { provide: MAT_DATE_FORMATS, useValue: MY_FORMATS },
   ],
 })
-export class MaterialModule {}
+export class MaterialModule { }

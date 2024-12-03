@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { PageEvent } from '@angular/material/paginator';
 import { Product } from 'src/app/core/models';
 import { ProductoService } from 'src/app/core/services/producto.service';
-import { LegacyPageEvent as PageEvent } from '@angular/material/legacy-paginator';
 
 @Component({
   selector: 'sapp-producto',
@@ -25,7 +25,7 @@ export class ProductoComponent implements OnInit {
     'cantidad',
   ];
 
-  constructor(private _service: ProductoService) {}
+  constructor(private _service: ProductoService) { }
 
   ngOnInit(): void {
     this._service.paginate(this.pageIndex, this.pageSize).subscribe((data) => {
